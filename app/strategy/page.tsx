@@ -24,12 +24,12 @@ export default function Strategy() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-8">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-12 pb-6 border-b-4 border-amber-500">
             III. 컨설팅 전략 (Strategy)
           </h1>
 
-          <Card className="mb-8 shadow-lg">
-            <h2 className="text-2xl font-bold text-amber-900 mb-6">
+          <Card className="mb-10 shadow-xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-8 border-l-4 border-amber-500 pl-6">
               전략 프레임워크: "천년의 기술, 백년의 브랜드로"
             </h2>
 
@@ -37,14 +37,14 @@ export default function Strategy() {
               mode="alternate"
               items={phaseTimeline.map((phase, index) => ({
                 children: (
-                  <Card className="shadow-md">
-                    <h3 className="text-xl font-bold text-amber-800 mb-2">
+                  <Card className="shadow-lg">
+                    <h3 className="text-2xl md:text-3xl font-bold text-amber-800 mb-3">
                       {phase.phase}: {phase.title}
                     </h3>
-                    <p className="text-gray-600 mb-3">{phase.period}</p>
-                    <ul className="space-y-1">
+                    <p className="text-gray-600 mb-4 text-lg">{phase.period}</p>
+                    <ul className="space-y-2">
                       {phase.tasks.map((task, idx) => (
-                        <li key={idx} className="text-gray-700">• {task}</li>
+                        <li key={idx} className="text-gray-700 text-base">• {task}</li>
                       ))}
                     </ul>
                   </Card>
@@ -54,51 +54,52 @@ export default function Strategy() {
             />
           </Card>
 
-          <Card className="mb-8 shadow-lg">
-            <h2 className="text-2xl font-bold text-amber-900 mb-6">AI 도구 포트폴리오</h2>
+          <Card className="mb-10 shadow-xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-8 border-l-4 border-amber-500 pl-6">AI 도구 포트폴리오</h2>
             <Table
               columns={columns}
               dataSource={aiToolsData}
               pagination={false}
               rowKey="tool"
+              className="text-base"
             />
-            <div className="mt-4 p-4 bg-blue-50 rounded-lg">
-              <p className="text-lg font-semibold">
+            <div className="mt-6 p-6 bg-blue-50 rounded-lg shadow-lg">
+              <p className="text-xl font-bold">
                 월 투자: 3.5만원 / 연간: 42만원
               </p>
             </div>
           </Card>
 
-          <Card className="mb-8 shadow-lg">
-            <h2 className="text-2xl font-bold text-amber-900 mb-6">3대 목표</h2>
-            <Row gutter={[16, 16]}>
+          <Card className="mb-10 shadow-xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-8 border-l-4 border-amber-500 pl-6">3대 목표</h2>
+            <Row gutter={[24, 24]}>
               <Col xs={24} md={8}>
-                <Card className="text-center h-full bg-gradient-to-br from-blue-50 to-blue-100">
-                  <RocketOutlined className="text-5xl text-blue-500 mb-4" />
-                  <h3 className="text-xl font-bold mb-2">1년 매출 2배</h3>
-                  <p className="text-gray-700">3,500만원 → 8,000만원</p>
+                <Card className="text-center h-full bg-gradient-to-br from-blue-50 to-blue-100 shadow-lg">
+                  <RocketOutlined className="text-6xl text-blue-500 mb-6" />
+                  <h3 className="text-2xl md:text-3xl font-bold mb-3">1년 매출 2배</h3>
+                  <p className="text-gray-700 text-lg">3,500만원 → 8,000만원</p>
                 </Card>
               </Col>
               <Col xs={24} md={8}>
-                <Card className="text-center h-full bg-gradient-to-br from-green-50 to-green-100">
-                  <ThunderboltOutlined className="text-5xl text-green-500 mb-4" />
-                  <h3 className="text-xl font-bold mb-2">온라인 비중 50%</h3>
-                  <p className="text-gray-700">현재 5% → 50%</p>
+                <Card className="text-center h-full bg-gradient-to-br from-green-50 to-green-100 shadow-lg">
+                  <ThunderboltOutlined className="text-6xl text-green-500 mb-6" />
+                  <h3 className="text-2xl md:text-3xl font-bold mb-3">온라인 비중 50%</h3>
+                  <p className="text-gray-700 text-lg">현재 5% → 50%</p>
                 </Card>
               </Col>
               <Col xs={24} md={8}>
-                <Card className="text-center h-full bg-gradient-to-br from-orange-50 to-orange-100">
-                  <TeamOutlined className="text-5xl text-orange-500 mb-4" />
-                  <h3 className="text-xl font-bold mb-2">MZ세대 고객 30%</h3>
-                  <p className="text-gray-700">현재 5% → 30%</p>
+                <Card className="text-center h-full bg-gradient-to-br from-orange-50 to-orange-100 shadow-lg">
+                  <TeamOutlined className="text-6xl text-orange-500 mb-6" />
+                  <h3 className="text-2xl md:text-3xl font-bold mb-3">MZ세대 고객 30%</h3>
+                  <p className="text-gray-700 text-lg">현재 5% → 30%</p>
                 </Card>
               </Col>
             </Row>
           </Card>
 
-          <Card className="mb-8 shadow-lg bg-gradient-to-br from-amber-50 to-orange-50">
-            <h2 className="text-2xl font-bold text-amber-900 mb-4">Phase 1: 디지털 기반 구축 (1-3개월)</h2>
-            <ul className="space-y-3 text-lg">
+          <Card className="mb-10 shadow-xl bg-gradient-to-br from-amber-50 to-orange-50">
+            <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-6 border-l-4 border-amber-500 pl-6">Phase 1: 디지털 기반 구축 (1-3개월)</h2>
+            <ul className="space-y-4 text-lg">
               <li>• AI 도구 도입 및 교육</li>
               <li>• 네이버 스마트스토어 오픈</li>
               <li>• 인스타그램 계정 개설 및 SNS 마케팅 시작</li>
@@ -107,9 +108,9 @@ export default function Strategy() {
             </ul>
           </Card>
 
-          <Card className="mb-8 shadow-lg bg-gradient-to-br from-green-50 to-emerald-50">
-            <h2 className="text-2xl font-bold text-green-900 mb-4">Phase 2: 브랜드 혁신 (4-6개월)</h2>
-            <ul className="space-y-3 text-lg">
+          <Card className="mb-10 shadow-xl bg-gradient-to-br from-green-50 to-emerald-50">
+            <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-6 border-l-4 border-green-500 pl-6">Phase 2: 브랜드 혁신 (4-6개월)</h2>
+            <ul className="space-y-4 text-lg">
               <li>• MZ세대 타겟 신제품 개발 (스마트폰 케이스, 키링, 트레이)</li>
               <li>• 장인 스토리텔링 콘텐츠 제작</li>
               <li>• 인플루언서 협업 (5건)</li>
@@ -118,9 +119,9 @@ export default function Strategy() {
             </ul>
           </Card>
 
-          <Card className="mb-8 shadow-lg bg-gradient-to-br from-purple-50 to-pink-50">
-            <h2 className="text-2xl font-bold text-purple-900 mb-4">Phase 3: 사업 확장 (7-12개월)</h2>
-            <ul className="space-y-3 text-lg">
+          <Card className="mb-10 shadow-xl bg-gradient-to-br from-purple-50 to-pink-50">
+            <h2 className="text-3xl md:text-4xl font-bold text-purple-900 mb-6 border-l-4 border-purple-500 pl-6">Phase 3: 사업 확장 (7-12개월)</h2>
+            <ul className="space-y-4 text-lg">
               <li>• 체험 프로그램 런칭 (공방 투어, 제작 클래스)</li>
               <li>• B2B 채널 확대 (삼성반도체, 플랫폼시티 입주 기업)</li>
               <li>• AI 수요 예측 시스템 구축</li>
