@@ -3,10 +3,18 @@
 import { Card, Row, Col, Statistic } from 'antd';
 import { RiseOutlined, TeamOutlined, ShoppingOutlined, GlobalOutlined } from '@ant-design/icons';
 import Navigation from '../components/layout/Navigation';
+import PageNavigation from '../components/layout/PageNavigation';
 import SalesGrowthChart from '../components/charts/SalesGrowthChart';
 import { motion } from 'framer-motion';
+import CountUp from 'react-countup';
+import { useInView } from 'react-intersection-observer';
 
 export default function Outcomes() {
+  const { ref: statsRef, inView: statsInView } = useInView({
+    threshold: 0.3,
+    triggerOnce: true
+  });
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Navigation />
@@ -27,49 +35,77 @@ export default function Outcomes() {
               <SalesGrowthChart />
             </div>
 
-            <Row gutter={[24, 24]} className="mt-8">
+            <Row gutter={[24, 24]} className="mt-8" ref={statsRef}>
               <Col xs={24} sm={12} md={6}>
-                <Card className="text-center bg-gradient-to-br from-blue-50 to-blue-100 shadow-lg h-full">
-                  <Statistic
-                    title={<span className="text-base font-bold">매출 증가율</span>}
-                    value={471}
-                    suffix="%"
-                    prefix={<RiseOutlined />}
-                    valueStyle={{ color: '#1890ff', fontSize: '2rem', fontWeight: 'bold' }}
-                  />
-                </Card>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={statsInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                >
+                  <Card className="text-center bg-gradient-to-br from-blue-50 to-blue-100 shadow-lg h-full hover:shadow-2xl transition-shadow duration-300">
+                    <Statistic
+                      title={<span className="text-base font-bold">매출 증가율</span>}
+                      value={statsInView ? 471 : 0}
+                      suffix="%"
+                      prefix={<RiseOutlined />}
+                      valueStyle={{ color: '#1890ff', fontSize: '2rem', fontWeight: 'bold' }}
+                      formatter={(value) => <CountUp end={Number(value)} duration={2.5} separator="," />}
+                    />
+                  </Card>
+                </motion.div>
               </Col>
               <Col xs={24} sm={12} md={6}>
-                <Card className="text-center bg-gradient-to-br from-green-50 to-green-100 shadow-lg h-full">
-                  <Statistic
-                    title={<span className="text-base font-bold">온라인 매출</span>}
-                    value={1900}
-                    suffix="% ↑"
-                    prefix={<ShoppingOutlined />}
-                    valueStyle={{ color: '#52c41a', fontSize: '2rem', fontWeight: 'bold' }}
-                  />
-                </Card>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={statsInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                >
+                  <Card className="text-center bg-gradient-to-br from-green-50 to-green-100 shadow-lg h-full hover:shadow-2xl transition-shadow duration-300">
+                    <Statistic
+                      title={<span className="text-base font-bold">온라인 매출</span>}
+                      value={statsInView ? 1900 : 0}
+                      suffix="% ↑"
+                      prefix={<ShoppingOutlined />}
+                      valueStyle={{ color: '#52c41a', fontSize: '2rem', fontWeight: 'bold' }}
+                      formatter={(value) => <CountUp end={Number(value)} duration={2.5} separator="," />}
+                    />
+                  </Card>
+                </motion.div>
               </Col>
               <Col xs={24} sm={12} md={6}>
-                <Card className="text-center bg-gradient-to-br from-orange-50 to-orange-100 shadow-lg h-full">
-                  <Statistic
-                    title={<span className="text-base font-bold">총 고객 수</span>}
-                    value={500}
-                    suffix="명"
-                    prefix={<TeamOutlined />}
-                    valueStyle={{ color: '#fa8c16', fontSize: '2rem', fontWeight: 'bold' }}
-                  />
-                </Card>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={statsInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                >
+                  <Card className="text-center bg-gradient-to-br from-orange-50 to-orange-100 shadow-lg h-full hover:shadow-2xl transition-shadow duration-300">
+                    <Statistic
+                      title={<span className="text-base font-bold">총 고객 수</span>}
+                      value={statsInView ? 500 : 0}
+                      suffix="명"
+                      prefix={<TeamOutlined />}
+                      valueStyle={{ color: '#fa8c16', fontSize: '2rem', fontWeight: 'bold' }}
+                      formatter={(value) => <CountUp end={Number(value)} duration={2.5} separator="," />}
+                    />
+                  </Card>
+                </motion.div>
               </Col>
               <Col xs={24} sm={12} md={6}>
-                <Card className="text-center bg-gradient-to-br from-purple-50 to-purple-100 shadow-lg h-full">
-                  <Statistic
-                    title={<span className="text-base font-bold">SNS 팔로워</span>}
-                    value={10000}
-                    prefix={<GlobalOutlined />}
-                    valueStyle={{ color: '#722ed1', fontSize: '2rem', fontWeight: 'bold' }}
-                  />
-                </Card>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={statsInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                >
+                  <Card className="text-center bg-gradient-to-br from-purple-50 to-purple-100 shadow-lg h-full hover:shadow-2xl transition-shadow duration-300">
+                    <Statistic
+                      title={<span className="text-base font-bold">SNS 팔로워</span>}
+                      value={statsInView ? 10000 : 0}
+                      prefix={<GlobalOutlined />}
+                      valueStyle={{ color: '#722ed1', fontSize: '2rem', fontWeight: 'bold' }}
+                      formatter={(value) => <CountUp end={Number(value)} duration={2.5} separator="," />}
+                    />
+                  </Card>
+                </motion.div>
               </Col>
             </Row>
           </Card>
@@ -160,6 +196,8 @@ export default function Outcomes() {
             </div>
           </Card>
         </motion.div>
+
+        <PageNavigation />
       </div>
     </div>
   );
