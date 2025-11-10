@@ -25,7 +25,7 @@ export default function CoverPage() {
           </h3>
 
           <div className="my-20">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-amber-900 mb-8 leading-tight tracking-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-amber-900 mb-8 leading-tight tracking-tight whitespace-nowrap">
               {coverData.subtitle}
             </h1>
             <h2 className="text-2xl md:text-3xl lg:text-4xl text-gray-700 font-medium mt-6">
@@ -42,7 +42,6 @@ export default function CoverPage() {
         >
           <div className="bg-white p-10 rounded-2xl shadow-2xl border border-amber-100">
             <h3 className="text-2xl font-bold text-amber-900 mb-6">컨설팅 대상 업체</h3>
-            <p className="text-3xl font-bold text-gray-800 mb-3">{coverData.company.name}</p>
             <p className="text-lg text-gray-600">{coverData.company.address}</p>
           </div>
 
@@ -52,7 +51,6 @@ export default function CoverPage() {
               <p className="text-2xl font-semibold text-gray-800">
                 {coverData.applicant.name}
               </p>
-              <p className="text-xl">연락처: {coverData.applicant.phone}</p>
             </div>
           </div>
         </motion.div>
