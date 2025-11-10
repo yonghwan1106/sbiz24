@@ -8,36 +8,27 @@ import { motion } from 'framer-motion';
 
 export default function CoverPage() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-lacquer-mother-pearl via-traditional-cream to-amber-50 p-8 relative overflow-hidden">
-      {/* Traditional Pattern Background */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-20 w-64 h-64 bg-lacquer-brown rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-lacquer-gold rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-lacquer-red rounded-full blur-3xl"></div>
-      </div>
-
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100 p-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-center max-w-5xl w-full relative z-10"
+        className="text-center max-w-5xl w-full"
       >
         <motion.div
           initial={{ scale: 0.9 }}
           animate={{ scale: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
-          <div className="inline-block px-6 py-3 mb-12 border-2 border-lacquer-gold bg-gradient-to-r from-lacquer-gold/10 to-traditional-amber/10 rounded-full shadow-lg">
-            <h3 className="text-xl md:text-2xl text-lacquer-brown font-bold tracking-wide">
-              {coverData.title}
-            </h3>
-          </div>
+          <h3 className="text-xl md:text-2xl text-gray-600 mb-12 font-medium tracking-wide">
+            {coverData.title}
+          </h3>
 
           <div className="my-20">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-lacquer-brown via-lacquer-red to-lacquer-brown bg-clip-text text-transparent mb-8 leading-tight tracking-tight drop-shadow-sm">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-amber-900 mb-8 leading-tight tracking-tight">
               {coverData.subtitle}
             </h1>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl text-lacquer-warm font-medium mt-6">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl text-gray-700 font-medium mt-6">
               {coverData.description}
             </h2>
           </div>
@@ -49,16 +40,16 @@ export default function CoverPage() {
           transition={{ delay: 0.6 }}
           className="mt-20 mb-16 space-y-6"
         >
-          <div className="bg-gradient-to-br from-white to-lacquer-mother-pearl p-10 rounded-2xl shadow-2xl border-2 border-lacquer-gold/20 hover:border-lacquer-gold/40 transition-all duration-300">
-            <h3 className="text-2xl font-bold text-lacquer-brown mb-6">컨설팅 대상 업체</h3>
-            <p className="text-3xl font-bold bg-gradient-to-r from-lacquer-brown to-lacquer-red bg-clip-text text-transparent mb-3">{coverData.company.name}</p>
-            <p className="text-lg text-lacquer-warm/80">{coverData.company.address}</p>
+          <div className="bg-white p-10 rounded-2xl shadow-2xl border border-amber-100">
+            <h3 className="text-2xl font-bold text-amber-900 mb-6">컨설팅 대상 업체</h3>
+            <p className="text-3xl font-bold text-gray-800 mb-3">{coverData.company.name}</p>
+            <p className="text-lg text-gray-600">{coverData.company.address}</p>
           </div>
 
-          <div className="bg-gradient-to-br from-white to-lacquer-mother-pearl p-10 rounded-2xl shadow-2xl border-2 border-lacquer-gold/20 hover:border-lacquer-gold/40 transition-all duration-300">
-            <h3 className="text-2xl font-bold text-lacquer-brown mb-6">신청자</h3>
-            <div className="text-lacquer-warm space-y-3 text-lg">
-              <p className="text-2xl font-semibold text-lacquer-brown">
+          <div className="bg-white p-10 rounded-2xl shadow-2xl border border-amber-100">
+            <h3 className="text-2xl font-bold text-amber-900 mb-6">신청자</h3>
+            <div className="text-gray-700 space-y-3 text-lg">
+              <p className="text-2xl font-semibold text-gray-800">
                 {coverData.applicant.name}
               </p>
               <p className="text-xl">연락처: {coverData.applicant.phone}</p>
@@ -71,20 +62,15 @@ export default function CoverPage() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.9 }}
         >
-          <p className="text-2xl text-lacquer-warm/80 mb-16 font-medium">{coverData.date}</p>
+          <p className="text-2xl text-gray-600 mb-16 font-medium">{coverData.date}</p>
 
           <Link href="/executive-summary">
             <Button
               type="primary"
               size="large"
               icon={<FileTextOutlined />}
-              className="px-16 py-8 h-auto text-2xl font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105 duration-300"
-              style={{
-                fontSize: '1.25rem',
-                height: 'auto',
-                background: 'linear-gradient(135deg, #4a2c1f 0%, #8b3a3a 100%)',
-                border: 'none'
-              }}
+              className="px-16 py-8 h-auto text-2xl font-bold shadow-xl hover:shadow-2xl transition-all"
+              style={{ fontSize: '1.25rem', height: 'auto' }}
             >
               제안서 보기
             </Button>
