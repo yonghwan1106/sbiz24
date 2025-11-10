@@ -98,7 +98,7 @@ export default function SalesGrowthChart() {
         labels: {
           font: {
             size: 14,
-            weight: '600' as const,
+            weight: 'bold' as const,
           },
           padding: 20,
           usePointStyle: true,
@@ -148,7 +148,7 @@ export default function SalesGrowthChart() {
         ticks: {
           font: {
             size: 13,
-            weight: '500' as const,
+            weight: 'normal' as const,
           },
           color: '#4a2c1f',
           callback: function(value: any) {
@@ -163,7 +163,7 @@ export default function SalesGrowthChart() {
         ticks: {
           font: {
             size: 13,
-            weight: '600' as const,
+            weight: 'bold' as const,
           },
           color: '#4a2c1f',
         }
