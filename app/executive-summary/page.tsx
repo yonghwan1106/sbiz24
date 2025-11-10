@@ -71,50 +71,50 @@ export default function ExecutiveSummary() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-12 pb-6 border-b-4 border-amber-500">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-16 pb-8 border-b-4 border-amber-500">
             I. Executive Summary
           </h1>
 
-          <Card className="mb-10 shadow-xl border-l-4 border-l-amber-500" bodyStyle={{ padding: '2rem' }}>
-            <h2 className="text-3xl font-bold text-amber-900 mb-6">컨설팅 배경</h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              경선칠기는 경기도 용인시 기흥구에서 전통 칠기 제조업을 영위하는 소상공인으로, 
-              <strong className="text-amber-800"> 40년 이상의 장인 기술</strong>을 보유하고 있습니다. 
+          <Card className="mb-20 shadow-xl border-l-4 border-l-amber-500" styles={{ body: { padding: '2.5rem' } }}>
+            <h2 className="text-3xl font-bold text-amber-900 mb-10">컨설팅 배경</h2>
+            <p className="text-lg text-gray-700 leading-loose">
+              경선칠기는 경기도 용인시 기흥구에서 전통 칠기 제조업을 영위하는 소상공인으로,
+              <strong className="text-amber-800"> 40년 이상의 장인 기술</strong>을 보유하고 있습니다.
               그러나 디지털 마케팅 부재, MZ세대와의 접점 부족, 온라인 채널 미비로 인해 성장에 한계를 겪고 있습니다.
             </p>
           </Card>
 
-          <Card className="mb-10 shadow-xl border-l-4 border-l-blue-500" bodyStyle={{ padding: '2rem' }}>
-            <h2 className="text-3xl font-bold text-blue-900 mb-6">
+          <Card className="mb-20 shadow-xl border-l-4 border-l-blue-500" styles={{ body: { padding: '2.5rem' } }}>
+            <h2 className="text-3xl font-bold text-blue-900 mb-10">
               핵심 전략: "천년의 기술, 백년의 브랜드로"
             </h2>
-            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+            <p className="text-lg text-gray-700 mb-8 leading-loose">
               전통 칠기의 가치를 AI·데이터 기술로 현대화하여:
             </p>
-            <ul className="space-y-4">
+            <ul className="space-y-6">
               <li className="flex items-start">
-                <Tag color="blue" className="text-base px-4 py-2 mr-3 font-semibold">디지털 전환</Tag>
-                <span className="text-lg pt-1">저비용 AI 도구로 마케팅 자동화</span>
+                <Tag color="blue" className="text-base px-4 py-2 mr-4 font-semibold">디지털 전환</Tag>
+                <span className="text-lg pt-1.5 leading-relaxed">저비용 AI 도구로 마케팅 자동화</span>
               </li>
               <li className="flex items-start">
-                <Tag color="green" className="text-base px-4 py-2 mr-3 font-semibold">세대 연결</Tag>
-                <span className="text-lg pt-1">MZ세대 뉴트로 트렌드 활용</span>
+                <Tag color="green" className="text-base px-4 py-2 mr-4 font-semibold">세대 연결</Tag>
+                <span className="text-lg pt-1.5 leading-relaxed">MZ세대 뉴트로 트렌드 활용</span>
               </li>
               <li className="flex items-start">
-                <Tag color="orange" className="text-base px-4 py-2 mr-3 font-semibold">지역 브랜딩</Tag>
-                <span className="text-lg pt-1">GTX 플랫폼시티 개발 연계</span>
+                <Tag color="orange" className="text-base px-4 py-2 mr-4 font-semibold">지역 브랜딩</Tag>
+                <span className="text-lg pt-1.5 leading-relaxed">GTX 플랫폼시티 개발 연계</span>
               </li>
             </ul>
           </Card>
 
-          <Card 
-            className="mb-10 shadow-xl" 
+          <Card
+            className="mb-20 shadow-xl"
             title={<h2 className="text-3xl font-bold text-gray-800 m-0">주요 목표</h2>}
-            bodyStyle={{ padding: '2rem' }}
+            styles={{ body: { padding: '2.5rem' } }}
           >
-            <Table 
-              columns={columns} 
-              dataSource={goalsData} 
+            <Table
+              columns={columns}
+              dataSource={goalsData}
               pagination={false}
               rowKey="metric"
               className="overflow-x-auto"
@@ -122,9 +122,9 @@ export default function ExecutiveSummary() {
             />
           </Card>
 
-          <Card className="mb-10 shadow-xl" bodyStyle={{ padding: '2rem' }}>
-            <h2 className="text-3xl font-bold text-gray-800 mb-8">4대 차별화 포인트</h2>
-            <Row gutter={[24, 24]}>
+          <Card className="mb-20 shadow-xl" styles={{ body: { padding: '2.5rem' } }}>
+            <h2 className="text-3xl font-bold text-gray-800 mb-12">4대 차별화 포인트</h2>
+            <Row gutter={[32, 32]}>
               {differentiators.map((item, index) => (
                 <Col xs={24} md={12} key={index}>
                   <motion.div
@@ -132,15 +132,15 @@ export default function ExecutiveSummary() {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: index * 0.1 }}
                   >
-                    <Card 
+                    <Card
                       className="h-full hover:shadow-2xl transition-all duration-300 border-2 border-gray-100"
-                      bodyStyle={{ padding: '2rem' }}
+                      styles={{ body: { padding: '2.5rem' } }}
                     >
-                      <div className="text-center mb-6">{item.icon}</div>
-                      <h3 className="text-2xl font-bold text-gray-800 mb-4 text-center">
+                      <div className="text-center mb-8">{item.icon}</div>
+                      <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
                         {item.title}
                       </h3>
-                      <p className="text-lg text-gray-600 text-center leading-relaxed">
+                      <p className="text-lg text-gray-600 text-center leading-loose">
                         {item.description}
                       </p>
                     </Card>

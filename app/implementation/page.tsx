@@ -42,12 +42,12 @@ export default function Implementation() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-12 pb-6 border-b-4 border-amber-500">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-16 pb-8 border-b-4 border-amber-500">
             IV. 실행 계획 (Implementation)
           </h1>
 
-          <Card className="mb-10 shadow-xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-8 border-l-4 border-amber-500 pl-6">1. 예산 및 투자 계획</h2>
+          <Card className="mb-20 shadow-xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-10 border-l-4 border-amber-500 pl-6">1. 예산 및 투자 계획</h2>
 
             <Table
               columns={budgetColumns}
@@ -66,22 +66,22 @@ export default function Implementation() {
               )}
             />
 
-            <div className="mt-8 p-8 bg-blue-50 rounded-lg shadow-lg">
-              <h3 className="text-2xl md:text-3xl font-bold mb-6">ROI 분석</h3>
-              <Row gutter={[24, 24]}>
+            <div className="mt-12 p-10 bg-blue-50 rounded-lg shadow-lg">
+              <h3 className="text-2xl md:text-3xl font-bold mb-8">ROI 분석</h3>
+              <Row gutter={[32, 32]}>
                 <Col xs={24} md={12}>
-                  <div className="bg-white p-6 rounded shadow-lg">
-                    <h4 className="font-bold mb-3 text-xl">1년 차</h4>
-                    <p className="text-base mb-2">투자: 820만원</p>
-                    <p className="text-base mb-2">매출 증가: 4,500만원</p>
+                  <div className="bg-white p-8 rounded shadow-lg">
+                    <h4 className="font-bold mb-4 text-xl">1년 차</h4>
+                    <p className="text-base mb-3 leading-relaxed">투자: 820만원</p>
+                    <p className="text-base mb-3 leading-relaxed">매출 증가: 4,500만원</p>
                     <p className="text-green-600 font-bold text-xl">ROI: 65%</p>
                   </div>
                 </Col>
                 <Col xs={24} md={12}>
-                  <div className="bg-white p-6 rounded shadow-lg">
-                    <h4 className="font-bold mb-3 text-xl">3년 차 누적</h4>
-                    <p className="text-base mb-2">총 투자: 2,000만원</p>
-                    <p className="text-base mb-2">매출 증가: 1억 6,500만원</p>
+                  <div className="bg-white p-8 rounded shadow-lg">
+                    <h4 className="font-bold mb-4 text-xl">3년 차 누적</h4>
+                    <p className="text-base mb-3 leading-relaxed">총 투자: 2,000만원</p>
+                    <p className="text-base mb-3 leading-relaxed">매출 증가: 1억 6,500만원</p>
                     <p className="text-green-600 font-bold text-xl">ROI: 148%</p>
                   </div>
                 </Col>
@@ -89,12 +89,12 @@ export default function Implementation() {
             </div>
           </Card>
 
-          <Card className="mb-10 shadow-xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-8 border-l-4 border-amber-500 pl-6">2. KPI 및 성과 측정</h2>
+          <Card className="mb-20 shadow-xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-10 border-l-4 border-amber-500 pl-6">2. KPI 및 성과 측정</h2>
 
             {kpiData.map((phaseData, index) => (
-              <div key={index} className="mb-8">
-                <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-700">{phaseData.phase}</h3>
+              <div key={index} className="mb-10">
+                <h3 className="text-2xl md:text-3xl font-bold mb-6 text-gray-700">{phaseData.phase}</h3>
                 <div className="overflow-x-auto">
                   <table className="w-full border-collapse shadow-lg">
                     <thead>
@@ -123,8 +123,8 @@ export default function Implementation() {
             ))}
           </Card>
 
-          <Card className="mb-10 shadow-xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-8 border-l-4 border-amber-500 pl-6">3. 리스크 관리</h2>
+          <Card className="mb-20 shadow-xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-10 border-l-4 border-amber-500 pl-6">3. 리스크 관리</h2>
             <Table
               columns={riskColumns}
               dataSource={riskData}
@@ -133,23 +133,23 @@ export default function Implementation() {
             />
           </Card>
 
-          <Card className="mb-10 shadow-xl bg-gradient-to-br from-green-50 to-emerald-50">
-            <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-6 border-l-4 border-green-500 pl-6">실행 일정 요약</h2>
-            <div className="space-y-6">
-              <div className="bg-white p-6 rounded shadow-lg">
-                <h3 className="font-bold text-2xl mb-3">1분기 (1-3월)</h3>
-                <p className="text-base mb-2">AI 도구 도입, 스마트스토어 오픈, SNS 마케팅 시작</p>
-                <p className="text-red-600 font-bold text-xl mt-3">투자: 130만원</p>
+          <Card className="mb-20 shadow-xl bg-gradient-to-br from-green-50 to-emerald-50">
+            <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-8 border-l-4 border-green-500 pl-6">실행 일정 요약</h2>
+            <div className="space-y-8">
+              <div className="bg-white p-8 rounded shadow-lg">
+                <h3 className="font-bold text-2xl mb-4">1분기 (1-3월)</h3>
+                <p className="text-base mb-3 leading-relaxed">AI 도구 도입, 스마트스토어 오픈, SNS 마케팅 시작</p>
+                <p className="text-red-600 font-bold text-xl mt-4">투자: 130만원</p>
               </div>
-              <div className="bg-white p-6 rounded shadow-lg">
-                <h3 className="font-bold text-2xl mb-3">2분기 (4-6월)</h3>
-                <p className="text-base mb-2">신제품 개발, 인플루언서 협업, 데이터 분석</p>
-                <p className="text-red-600 font-bold text-xl mt-3">투자: 180만원</p>
+              <div className="bg-white p-8 rounded shadow-lg">
+                <h3 className="font-bold text-2xl mb-4">2분기 (4-6월)</h3>
+                <p className="text-base mb-3 leading-relaxed">신제품 개발, 인플루언서 협업, 데이터 분석</p>
+                <p className="text-red-600 font-bold text-xl mt-4">투자: 180만원</p>
               </div>
-              <div className="bg-white p-6 rounded shadow-lg">
-                <h3 className="font-bold text-2xl mb-3">3-4분기 (7-12월)</h3>
-                <p className="text-base mb-2">체험 프로그램, B2B 영업, 자사몰 고도화</p>
-                <p className="text-red-600 font-bold text-xl mt-3">투자: 230만원</p>
+              <div className="bg-white p-8 rounded shadow-lg">
+                <h3 className="font-bold text-2xl mb-4">3-4분기 (7-12월)</h3>
+                <p className="text-base mb-3 leading-relaxed">체험 프로그램, B2B 영업, 자사몰 고도화</p>
+                <p className="text-red-600 font-bold text-xl mt-4">투자: 230만원</p>
               </div>
             </div>
           </Card>
