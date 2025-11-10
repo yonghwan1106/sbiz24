@@ -6,12 +6,12 @@ export const coverData = {
   description: "경선칠기 AI·데이터 활용 점포경영 혁신 전략",
   company: {
     name: "경선칠기",
-    address: "경기도 용인시 기흥구 마북로247번길 74"
+    address: "경기도 용인시 수지구 성복로 128, 308동 1201호 (수)16851"
   },
   applicant: {
-    name: "[신청자 이름]",
-    phone: "[전화번호]",
-    email: "[이메일]"
+    name: "박용환",
+    phone: "010-7939-3123",
+    email: "sanoramyun8@gmail.com"
   },
   date: "2025년 11월"
 };
